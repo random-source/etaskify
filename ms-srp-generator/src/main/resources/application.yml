@@ -1,0 +1,20 @@
+server:
+  port: 8090
+
+logging:
+  level:
+    root: info
+    com.etaksify.ms: debug
+
+spring:
+  application:
+    name: ms-srp-generator
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+
+management:
+  endpoint:
+    health:
+      show-details: "ALWAYS"
+

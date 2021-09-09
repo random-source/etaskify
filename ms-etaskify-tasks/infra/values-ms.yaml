@@ -1,0 +1,13 @@
+
+# this is example for how to check user logged in or not
+
+ingresses:
+  - hostDev: "dev host name"
+    hostProd: "prod host name"
+    path: "/v1/tasks"
+    ingressClass: "ib-nginx"
+    annotations:
+      nginx.ingress.kubernetes.io/enable-global-auth: false
+      nginx.ingress.kubernetes.io/auth-method: GET
+      nginx.ingress.kubernetes.io/auth-url: "auth-service-url/v1/auth/token/verify"
+      nginx.ingress.kubernetes.io/auth-response-headers: "taskify-auth-user-id"

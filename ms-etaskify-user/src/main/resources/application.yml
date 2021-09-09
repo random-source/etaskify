@@ -1,0 +1,39 @@
+server:
+  port: 8082
+
+logging:
+  level:
+    root: info
+    com.etaksify.ms: debug
+
+spring:
+  application:
+    name: ms-etaskify-user
+  datasource:
+    url: jdbc:postgresql://localhost:5432/taskify_users
+    username: etaskify
+    password: etaskify_123
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 30_000 #ms
+        readTimeout: 30_000 #ms
+        loggerLevel: FULL
+
+client:
+  auth:
+    url: http://localhost:8083
+
+user:
+  password: taskify123
+

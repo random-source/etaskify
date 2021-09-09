@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_users_table
+      author: Movla Aliyev
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                constraints:
+                  primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(64)
+              - column:
+                  name: surname
+                  type: varchar(64)
+              - column:
+                  name: email
+                  type: varchar(64)
+              - column:
+                  name: salt
+                  type: varchar(256)
+              - column:
+                  name: verifier
+                  type: varchar(256)
+              - column:
+                  name: login
+                  type: varchar(256)
+              - column:
+                  name: user_type
+                  type: varchar(64)
+              - column:
+                  name: status
+                  type: varchar(64)
+              - column:
+                  name: organization_id
+                  type: bigint
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+

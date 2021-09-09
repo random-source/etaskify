@@ -1,0 +1,38 @@
+server:
+  port: 8083
+
+logging:
+  level:
+    root: info
+    com.etaksify.ms: debug
+
+spring:
+  application:
+    name: ms-etaskify-auth
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 30_000 #ms
+        readTimeout: 30_000 #ms
+        loggerLevel: FULL
+
+client:
+  user:
+    url: http://localhost:8082
+
+
+redis:
+  server:
+    urls: redis://localhost:6379
+
+jwt:
+  accessToken:
+    expirationTime: 1200
+  refreshToken:
+    expirationTime: 3600
+    expirationCount: 50
