@@ -76,7 +76,7 @@ class TaskService(
 
         taskRepo.save(task)
 
-        //notifyService.notifyUser(user.name!!, user.surname!!, task.title)
+        notifyService.notifyUser(user.name!!, user.surname!!, task.title)
     }
 
 
